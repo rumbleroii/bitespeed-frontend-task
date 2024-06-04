@@ -20,8 +20,7 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid black;
-    background-color: rgb(216, 216, 216);
+    background-color: rgb(235, 235, 235);
 }
 
 .navbar h3 {
@@ -39,9 +38,8 @@
     width: 16vw;
     text-align: center;
     padding: 1vh 1vw 1vw 1vh;
-    border: 1px solid rgb(128, 128, 128);
+    border: 1px solid rgb(184, 184, 184);
     border-top: 0;
-    background-color: rgb(216, 216, 216);
 }
 
 .node-css {
@@ -50,18 +48,47 @@
     justify-content: center;
     height: 100px;
     width: auto;
-    margin: 10px;
-    background-color: rgb(147, 147, 147);
+    margin: 20px;
+    font-weight: 500;
+    border: 2px solid rgb(43, 142, 254);
+    color: rgb(43, 142, 254);
+    border-radius: 4px;
 }
 
 .text-message-box {
-    width: 120px;
-    height: 50px;
+    width: 100px;
+    height: auto;
+    overflow:auto;
     padding: 10px;
-    border: 1px solid rgb(128, 128, 128);
-    background-color: rgb(216, 216, 216);
+    font-size: small;
+    background-color: rgb(235, 235, 235);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.text-message-box-text {
+    font-size: 8px;
+    margin-top: 5px;
+}
+
+.text-message-box-title {
+    color: green;
+}
+
+.text-message-menu {
+    margin: 10px;
+
+}
 .text-message-menu input{
+    margin-top: 3vh;
     width: 80%
+}
+
+.text-message-menu textarea {
+    width: 100%;
+    height: 8vh;
+}
+
+.text-message-menu-header {
+    display: flex;
+    display: row;
 }

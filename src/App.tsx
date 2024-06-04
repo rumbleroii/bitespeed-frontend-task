@@ -95,7 +95,7 @@ export default function App() {
         id: getId(),
         type: type,
         position,
-        data: { message: "" }
+        data: { message: "Sample Message" }
       };
     
       setLastNode(newNode.id);
@@ -143,7 +143,6 @@ export default function App() {
           {nodeClick==="text-message" ? (
               <>
                 <TextUpdater nodeId={lastNode} nodes={nodes} setNodes={setNodes} setNodeClick={setNodeClick} />
-                <button onClick={() => setNodeClick("")}>Back</button>
               </>
             ) : (
               <div 
@@ -189,13 +188,19 @@ const TextUpdater = ({ nodeId, nodes, setNodes, setNodeClick }: { nodeId: string
 
   return (
     <div className="text-message-menu">
-      <h1>Text Message</h1>
-      <input
-        type="text"
+      <div className="text-message-menu-header">
+        <button onClick={() => setNodeClick("")}>Back</button>
+      </div>
+      <p>Text</p>
+      {/* <input
+        type="textArea"
         placeholder="Enter your message here"
         value={inputValue}
         onChange={handleInputChange}
-      />
+      /> */}
+      {/*@ts-ignore*/}
+      <textarea name="postContent" placeholder="Enter your message here" value={inputValue} onChange={handleInputChange} />
+      <br />
       <button onClick={handleClick}>Add</button>
     </div>
   );

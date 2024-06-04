@@ -6,20 +6,32 @@ export type TextMessageNodeData = {
 }
 
 export function TextMessageNode({
-    data,
+    data, selected
   }: NodeProps<TextMessageNodeData>) {  
+    const textMessageBoxStyle = {
+      "width": "100px",
+      "height": "auto",
+      "overflow":"auto",
+      "padding": "10px",
+      "font-size": "small",
+      "background-color": "rgb(235, 235, 235)",
+      "box-shadow": "rgba(0, 0, 0, 0.24) 0px 3px 8px",
+      "border": selected ? `0.6px solid blue` : '0px solid black',
+      "border-radius": "5px",
+    }
     return (
       // We add this class to use the same styles as React Flow's default nodes.
       <>
-        <div className="text-message-box">
+        <div style={textMessageBoxStyle}>
             <div>
-            <h6>Send Message</h6>
+            <h6 className="text-message-box-title">Send Message</h6>
             </div>
             <hr/>
-            <p>{data.message}</p>
+            <p className="text-message-box-text">{data.message}</p>
         </div>
         <Handle type="target" position={Position.Right}/>
         <Handle type="source" position={Position.Left}/>
       </>
     );
   }
+  
