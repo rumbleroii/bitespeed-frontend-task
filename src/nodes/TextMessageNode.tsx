@@ -20,7 +20,6 @@ export function TextMessageNode({
       "border-radius": "5px",
     }
     return (
-      // We add this class to use the same styles as React Flow's default nodes.
       <>
         <div style={textMessageBoxStyle}>
             <div>

@@ -192,12 +192,6 @@ const TextUpdater = ({ nodeId, nodes, setNodes, setNodeClick }: { nodeId: string
         <button onClick={() => setNodeClick("")}>Back</button>
       </div>
       <p>Text</p>
-      {/* <input
-        type="textArea"
-        placeholder="Enter your message here"
-        value={inputValue}
-        onChange={handleInputChange}
-      /> */}
       {/*@ts-ignore*/}
       <textarea name="postContent" placeholder="Enter your message here" value={inputValue} onChange={handleInputChange} />
       <br />
