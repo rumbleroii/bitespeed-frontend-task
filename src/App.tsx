@@ -52,7 +52,7 @@ export default function App() {
         const { x = 0, y = 0, zoom = 1 } = flow.viewport;
         setNodes(flow.nodes || []);
         setEdges(flow.edges || []);
-        const viewport = (reactFlowInstance as any).setViewport({ x, y, zoom });
+        (reactFlowInstance as any).setViewport({ x, y, zoom });
       } 
     };
 
@@ -84,14 +84,13 @@ export default function App() {
         const adjustedY = (event.clientY - reactFlowBound.top);
       
         // Convert the adjusted screen coordinates to flow position
-        position = (reactFlowInstance as any).project({
+        position = (reactFlowInstance as any).screenToFlowPosition({
           x: adjustedX,
           y: adjustedY,
         });
       }
 
       // New Node
-      console.log(type);
       const newNode = {
         id: getId(),
         type: type,
@@ -104,7 +103,7 @@ export default function App() {
 
   }, [reactFlowInstance]);
 
-  const onNodeClick = (event: React.MouseEvent, node: any) => {
+  const onNodeClick = (node: any) => {
     setNodeClick(node.type);
     setLastNode(node.id);
   }
@@ -128,10 +127,12 @@ export default function App() {
               edgeTypes={edgeTypes}
               onConnect={onConnect}
               fitView
-              onInit={setReactFlowInstance as OnInit<any, any>}
+              // @ts-ignore
+              onInit={setReactFlowInstance as OnInit}
               onDragOver={(e) => onDragOn(e)}
               onDrop={(e) => {onDrop(e)}}
-              onNodeClick={(event, node) => onNodeClick(event,node)}
+              // @ts-ignore
+              onNodeClick={(event, node) => onNodeClick(node)}
             >
               <Background />
               <Controls />
