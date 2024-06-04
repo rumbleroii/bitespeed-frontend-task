@@ -1,1 +1,1 @@
-[text](https://bitespeed-frontend-task-jgb3.vercel.app)
+https://bitespeed-frontend-task-jgb3.vercel.app
